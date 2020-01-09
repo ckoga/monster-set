@@ -6,5 +6,3 @@ export const rootReducer = combineReducers({
   weapons: addWeapons,
   armors: addArmors,
 })
-
-export default rootReducer;

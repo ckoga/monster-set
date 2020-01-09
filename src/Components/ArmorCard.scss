@@ -1,0 +1,15 @@
+.armor-card {
+   border: 1px solid white;
+   width: 160px;
+   margin: 10px;
+   text-align: center;
+
+   .equip-img {
+    width: 120px
+   }
+
+   li {
+     list-style: none;
+     text-align: left;
+   }
+}

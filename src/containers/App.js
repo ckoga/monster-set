@@ -3,15 +3,16 @@ import logo from '../logo.svg';
 import './App.scss';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getWeapons, getArmor } from '../apiCalls';
+import { getWeapons, getArmors } from '../apiCalls';
 import EquipContainer from '../containers/EquipContainer';
 import Header from '../Components/Header'
+import Stats from '../containers/Stats';
 import { addArmors, addWeapons } from '../actions/index'
 
-class App extends Component {
+
+export class App extends Component {
   constructor() {
     super()
-    this.state = {}
   }
 
   componentDidMount = () => {
@@ -19,7 +20,7 @@ class App extends Component {
       .then(data => this.props.addWeapons(data))
       .catch(err => console.log(err))
 
-    getArmor()
+    getArmors()
       .then(data => this.props.addArmors(data))
       .catch(err => console.log(err))
   }
@@ -28,14 +29,17 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <EquipContainer />
+        <div className='below-header'>
+          <Stats />
+          <EquipContainer />
+        </div>
       </div>
     );
   }
 
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addWeapons: weapons => dispatch( addWeapons(weapons) ),
   addArmors: armors => dispatch( addArmors(armors) )
 })
