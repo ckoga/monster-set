@@ -1,0 +1,20 @@
+.equip-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.whole-container {
+  width: 125%;
+}
+
+.button-div {
+  text-align: center;
+}
+
+.weapon-btn,
+.armor-btn {
+  height: 30px;
+  width: 100px;
+  border-radius: 2px;
+  margin: 0 10px;
+}
