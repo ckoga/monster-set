@@ -1,4 +1,10 @@
 .stats-container {
+  text-align: center;
   width: 400px;
   border: 2px solid white;
+
+  li {
+    list-style: none;
+    text-align: left;
+  }
 }

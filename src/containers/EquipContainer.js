@@ -17,6 +17,17 @@ const EquipContainer = ({ armors, weapons }) => {
     />)
   })
 
+  let weaponCards = weapons.map(piece => {
+    return <WeaponCard 
+      key={piece.id}
+      img={piece.assets.image}
+      name={piece.name}
+      type={piece.type}
+      rarity={piece.rarity}
+      attack={piece.attack.display}
+    /> 
+  })
+
   
   return (
     <div className='whole-container'>
@@ -26,7 +37,8 @@ const EquipContainer = ({ armors, weapons }) => {
         <button className='armor-btn' type='button'>Armor</button>
       </div>
       <main className='equip-container'>
-        {cards}
+        {weaponCards}
+        {armorCards}
       </main>
     </div>
   )
