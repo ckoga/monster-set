@@ -21,6 +21,7 @@ const EquipContainer = ({ armors, weapons }) => {
   return (
     <div className='whole-container'>
       <div className='button-div'>
+        <button className='all-equip-btn' type='button'>All</button>
         <button className='weapon-btn' type='button'>Weapons</button>
         <button className='armor-btn' type='button'>Armor</button>
       </div>
