@@ -1,20 +1,21 @@
 import React from 'react';
-import ArmorCard from '../Components/ArmorCard';
-import WeaponCard from '../Components/WeaponCard';
+import ArmorCard from '../Components/ArmorCard/ArmorCard';
+import WeaponCard from '../Components/WeaponCard/WeaponCard';
 import { connect } from 'react-redux';
-import './EquipContainer.scss'
+import './EquipContainer.scss';
+import { Route, NavLink } from 'react-router-dom';
 
 const EquipContainer = ({ armors, weapons }) => {
   let armorCards = armors.map(piece => {
-    return (<ArmorCard
+    return <ArmorCard
       key={piece.id}
-      img={piece.assets.imageFemale}
+      img={piece.assets.imageMale}
       name={piece.name}
       type={piece.type}
       rank={piece.rank}
       rarity={piece.rarity}
       defense={piece.defense}
-    />)
+    />
   })
 
   let weaponCards = weapons.map(piece => {
@@ -32,9 +33,9 @@ const EquipContainer = ({ armors, weapons }) => {
   return (
     <div className='whole-container'>
       <div className='button-div'>
-        <button className='all-equip-btn' type='button'>All</button>
-        <button className='weapon-btn' type='button'>Weapons</button>
-        <button className='armor-btn' type='button'>Armor</button>
+        <NavLink className='nav' to='/all'>All</NavLink>
+        <NavLink className='nav' to='/weapons'>Weapons</NavLink>
+        <NavLink className='nav' to='/armor'>Armor</NavLink>
       </div>
       <main className='equip-container'>
         {weaponCards}

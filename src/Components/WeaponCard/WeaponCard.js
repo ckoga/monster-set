@@ -4,7 +4,7 @@ import './WeaponCard.scss';
 const WeaponCard = ({ img, name, type, rarity, attack }) => {
   return (
     <div className='weapon-card'>
-      <img className='equip-img' src={img}></img>
+      <img className='equip-img' src={img} alt='Weapon'></img>
       <h4 className='weapon-name'>{name}</h4>
       <ul>
         <li>type: {type}</li>

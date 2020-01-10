@@ -4,7 +4,7 @@ import './ArmorCard.scss'
 const ArmorCard = ({ img, name, type, rank, rarity, defense }) => {
   return (
     <div className='armor-card'>
-      <img className='equip-img' src={img}></img>
+      <img className='equip-img' src={img} alt='Piece of armor'></img>
       <h4>{name}</h4>
       <ul>
         <li>type: {type}</li>

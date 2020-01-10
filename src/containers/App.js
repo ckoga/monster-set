@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getWeapons, getArmors } from '../apiCalls';
 import EquipContainer from '../containers/EquipContainer';
-import Header from '../Components/Header'
+import Header from '../Components/Header/Header'
 import Stats from '../containers/Stats';
 import { addArmors, addWeapons } from '../actions/index'
 

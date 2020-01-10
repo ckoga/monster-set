@@ -11,13 +11,13 @@
   text-align: center;
 }
 
-.all-equip-btn,
-.weapon-btn,
-.armor-btn {
+.nav {
   cursor: pointer;
-  font-size: 1em;
+  color: azure;
+  font-size: 2em;
   height: 30px;
   width: 100px;
   border-radius: 2px;
   margin: 0 10px;
+  text-decoration: none;
 }
