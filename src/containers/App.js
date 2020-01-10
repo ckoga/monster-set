@@ -6,8 +6,9 @@ import { connect } from 'react-redux';
 import { getWeapons, getArmors } from '../apiCalls';
 import EquipContainer from '../containers/EquipContainer';
 import Header from '../Components/Header/Header'
-import Stats from '../containers/Stats';
+import Stats from './Build';
 import { addArmors, addWeapons } from '../actions/index'
+import Build from './Build';
 
 
 export class App extends Component {
@@ -30,7 +31,7 @@ export class App extends Component {
       <div className="App">
         <Header />
         <div className='below-header'>
-          <Stats />
+          <Build />
           <EquipContainer />
         </div>
       </div>
