@@ -5,8 +5,8 @@ export const getWeapons = async () => {
       throw Error ('Failed to get weapons')
     }
     const weapons = await res.json();
-    const smallerSet = weapons.slice(0, 100)
-    console.log(smallerSet)
+    const smallerSet = weapons.slice(0, 900)
+    console.log('weapons: ', smallerSet)
     return smallerSet;
   } catch (error) {
     console.error(error)
@@ -28,8 +28,8 @@ export const getArmors = async () => {
         throw Error('Failed to get armors')
       }
       const armor = await res.json();
-      const smallerSet = armor.slice(0, 100)
-    console.log(smallerSet)
+      const smallerSet = armor.slice(0, 600)
+    console.log('armor: ', smallerSet)
     return smallerSet;
   } catch (error) {
     console.log(error)

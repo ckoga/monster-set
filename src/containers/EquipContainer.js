@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import './EquipContainer.scss'
 
 const EquipContainer = ({ armors, weapons }) => {
-  let cards = armors.map(piece => {
+  let armorCards = armors.map(piece => {
     return (<ArmorCard
       key={piece.id}
-      img={piece.assets.imageMale && piece.assets.imageFemale}
+      img={piece.assets.imageFemale}
       name={piece.name}
       type={piece.type}
       rank={piece.rank}
