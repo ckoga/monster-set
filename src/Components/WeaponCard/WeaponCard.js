@@ -14,6 +14,7 @@ const WeaponCard = ({ img, name, type, rarity, attack, addEquip }) => {
     }
     addEquip(equipment)
   }
+  
   return (
     <div className='weapon-card' onClick={() => helper(img, name, type, rarity, attack) }>
       <img className='equip-img' src={img} alt='Weapon'></img>
