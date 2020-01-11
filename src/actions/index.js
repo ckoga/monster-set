@@ -11,3 +11,17 @@ export const addArmors = armors => {
     armors
   }
 }
+
+export const addPath = path => {
+  return {
+    type: 'ADD_PATH',
+    path
+  }
+}
+
+export const addEquip = equipment => {
+  return {
+    type: 'ADD_EQUIP',
+    equipment
+  }
+}
