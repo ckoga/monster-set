@@ -6,37 +6,44 @@ import ArmorCard from '../Components/ArmorCard/ArmorCard';
 const uuidv4 = require('uuid/v4');
 
 
-const Build = ({ equipment }) => {
-  let buildSet = () => {
-    return equipment.map(piece => {
-      if (piece.rank !== undefined) {
-          return <ArmorCard
-            key={uuidv4()}
-            img={piece.img}
-            name={piece.name}
-            type={piece.type}
-            rank={piece.rank}
-            rarity={piece.rarity}
-            defense={piece.defense}
-          />
-      } else if (piece.rank === undefined) {
-        return <WeaponCard
+export const Build = ({ equipment }) => {
+  let set = []
+  let buildSet = () => {  
+    equipment.map(piece => {
+      if (set.length <= 5 && piece.rank !== undefined) { 
+        console.log('set: ', set)     
+        set = [...set, <ArmorCard
           key={uuidv4()}
           img={piece.img}
           name={piece.name}
           type={piece.type}
+          rank={piece.rank}
           rarity={piece.rarity}
-          attack={piece.attack.display}
-        /> 
-      } else {
-        return 
+          defense={piece.defense}
+          />]
+        } else if (set.length <= 5 && piece.rank === undefined ) {
+          console.log('set: ', set)  
+          set = [...set, <WeaponCard
+            key={uuidv4()}
+            img={piece.img}
+            name={piece.name}
+            type={piece.type}
+            rarity={piece.rarity}
+            attack={piece.attack.display}
+            />]
+   
+          } else {
+            return 
+          }
+        })
+        return set
       }
-    })
-  }
-
-  return (
-    <aside className='build-container'>
+      
+      return (
+        <aside className='build-container'>
       <h3>Build Stats</h3>
+      <button className='build-btn' type='button'>Save Set</button>
+      
       {buildSet()}
     </aside>
   )

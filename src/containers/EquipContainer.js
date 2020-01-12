@@ -3,9 +3,10 @@ import ArmorCard from '../Components/ArmorCard/ArmorCard';
 import WeaponCard from '../Components/WeaponCard/WeaponCard';
 import { connect } from 'react-redux';
 import './EquipContainer.scss';
+const uuidv4 = require('uuid/v4');
 
 
-class EquipContainer extends Component {
+export class EquipContainer extends Component {
   constructor(props) {
     super(props)
   }
@@ -14,7 +15,7 @@ class EquipContainer extends Component {
     let { armors } = this.props
     let armorCards = armors.map(piece => {
       return <ArmorCard
-        key={piece.id}
+        key={uuidv4()}
         img={piece.assets.imageMale}
         name={piece.name}
         type={piece.type}
@@ -30,7 +31,7 @@ class EquipContainer extends Component {
     let { weapons } = this.props
     let weaponCards = weapons.map(piece => {
       return <WeaponCard 
-        key={piece.id}
+        key={uuidv4()}
         img={piece.assets.image}
         name={piece.name}
         type={piece.type}

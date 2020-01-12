@@ -3,7 +3,7 @@ import './ArmorCard.scss'
 import { connect } from 'react-redux';
 import { addEquip } from '../../actions/index';
 
-const ArmorCard = ({ img, name, type, rank, rarity, defense, addEquip }) => {
+export const ArmorCard = ({ img, name, type, rank, rarity, defense, addEquip }) => {
   let helper = (img, name, type, rank, rarity, defense) => {
     let equipment = {
       img: img,
