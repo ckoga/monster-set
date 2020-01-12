@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 import './App.scss';
 import { Route, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getWeapons, getArmors } from '../apiCalls';
 import EquipContainer from '../containers/EquipContainer';
-import { addArmors, addWeapons, addPath } from '../actions/index'
+import { addPath } from '../actions/index'
 import Build from './Build';
 import { fetchArmors } from '../thunks/fetchEquipment';
 import { fetchWeapons } from '../thunks/fetchEquipment';
