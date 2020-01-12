@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="header"
+  >
+    <h1
+      className="header-h1"
+    >
+      Monster Set
+    </h1>
+    <div
+      className="button-div"
+    >
+      <NavLink
+        className="nav"
+        onClick={[Function]}
+        to="/"
+      >
+        All
+      </NavLink>
+      <NavLink
+        className="nav"
+        onClick={[Function]}
+        to="/weapons"
+      >
+        Weapons
+      </NavLink>
+      <NavLink
+        className="nav"
+        onClick={[Function]}
+        to="/armor"
+      >
+        Armor
+      </NavLink>
+      <NavLink
+        className="nav"
+        onClick={[Function]}
+        to="/equipment-box"
+      >
+        Equipment Box
+      </NavLink>
+    </div>
+  </header>
+  <div
+    className="below-header"
+  >
+    <Connect(Build) />
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/weapons"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/armor"
+      render={[Function]}
+    />
+  </div>
+</div>
+`;
