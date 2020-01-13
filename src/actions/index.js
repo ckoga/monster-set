@@ -25,3 +25,10 @@ export const addEquip = equipment => {
     equipment
   }
 }
+
+export const addSet = set => {
+  return {
+    type: 'ADD_SET',
+    set
+  }
+}

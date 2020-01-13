@@ -7,9 +7,6 @@ const uuidv4 = require('uuid/v4');
 
 
 export class EquipContainer extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   createArmorCards = () => {
     let { armors } = this.props
