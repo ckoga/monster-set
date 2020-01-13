@@ -3,7 +3,7 @@ import './Build.scss'
 import { connect } from 'react-redux';
 import WeaponCard from '../Components/WeaponCard/WeaponCard';
 import ArmorCard from '../Components/ArmorCard/ArmorCard';
-import { addSet } from '../actions/index';
+import { addSet, addEquip } from '../actions/index';
 const uuidv4 = require('uuid/v4');
 
 
@@ -47,6 +47,7 @@ export class Build extends Component {
     let { equipment, addSet } = this.props
     console.log(this.props)
     addSet(equipment)
+    addEquip([])
   }
 
   render() {  
