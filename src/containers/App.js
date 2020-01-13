@@ -38,6 +38,7 @@ export class App extends Component {
           <Route exact path='/' render={() => <EquipContainer /> } />
           <Route exact path='/weapons' render={() => <EquipContainer /> } />
           <Route exact path='/armor' render={() => <EquipContainer /> } />
+          <Route exact path='/equipment-box' render={() => <EquipContainer /> } />
         </div>
       </div>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ArmorCard from '../Components/ArmorCard/ArmorCard';
 import WeaponCard from '../Components/WeaponCard/WeaponCard';
+import EquipmentBox from '../Components/EquipmentBox/EquipmentBox';
 import { connect } from 'react-redux';
 import './EquipContainer.scss';
 const uuidv4 = require('uuid/v4');
@@ -59,6 +60,12 @@ export class EquipContainer extends Component {
       return (
         <main className='equip-container'>
           {this.createWeaponCards()}
+        </main>
+      )
+    } else if (path === 'equipment-box') {
+      return (
+        <main className='equip-container'>
+          <EquipmentBox />
         </main>
       )
     }

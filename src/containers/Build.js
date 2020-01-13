@@ -69,7 +69,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  addSet: equipment => dispatch( addSet(equipment) )
+  addSet: equipment => dispatch( addSet(equipment) ),
+  addEquip: equipment => dispatch( addEquip(equipment) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Build);
