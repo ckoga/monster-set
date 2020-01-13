@@ -71,7 +71,7 @@ export class EquipContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   armors: state.armors,
   weapons: state.weapons,
   path: state.path
