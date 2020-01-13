@@ -43,7 +43,6 @@ export class EquipContainer extends Component {
   render() {
     let { path } = this.props;
     if (path === '') {
-      console.log(this.props)
       return (
         <main className='equip-container'>
           {this.createWeaponCards()}
