@@ -3,7 +3,7 @@ import './Build.scss'
 import { connect } from 'react-redux';
 import WeaponCard from '../Components/WeaponCard/WeaponCard';
 import ArmorCard from '../Components/ArmorCard/ArmorCard';
-import { addSet, addEquip } from '../actions/index';
+import { addSet, resetEquip } from '../actions/index';
 const uuidv4 = require('uuid/v4');
 
 
@@ -44,10 +44,11 @@ export class Build extends Component {
   }
 
   saveSet = () => {
-    let { equipment, addSet } = this.props
-    console.log(this.props)
+    let { equipment, addSet, resetEquip } = this.props
     addSet(equipment)
-    addEquip([])
+    resetEquip()
+    console.log(this.props.equipment)
+    this.buildSet()
   }
 
   render() {  
@@ -71,7 +72,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   addSet: equipment => dispatch( addSet(equipment) ),
-  addEquip: equipment => dispatch( addEquip(equipment) )
+  resetEquip: equipment => dispatch( resetEquip(equipment) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Build);

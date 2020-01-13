@@ -32,3 +32,10 @@ export const addSet = set => {
     set
   }
 }
+
+export const resetEquip = set => {
+  return {
+    type: 'RESET_EQUIP',
+    set
+  }
+}
