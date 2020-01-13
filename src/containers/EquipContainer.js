@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import ArmorCard from '../Components/ArmorCard/ArmorCard';
 import WeaponCard from '../Components/WeaponCard/WeaponCard';
+import EquipmentBox from '../Components/EquipmentBox/EquipmentBox';
 import { connect } from 'react-redux';
 import './EquipContainer.scss';
+const uuidv4 = require('uuid/v4');
 
 
-class EquipContainer extends Component {
-  constructor(props) {
-    super(props)
-  }
+export class EquipContainer extends Component {
 
   createArmorCards = () => {
     let { armors } = this.props
     let armorCards = armors.map(piece => {
       return <ArmorCard
-        key={piece.id}
+        key={uuidv4()}
         img={piece.assets.imageMale}
         name={piece.name}
         type={piece.type}
@@ -30,7 +29,7 @@ class EquipContainer extends Component {
     let { weapons } = this.props
     let weaponCards = weapons.map(piece => {
       return <WeaponCard 
-        key={piece.id}
+        key={uuidv4()}
         img={piece.assets.image}
         name={piece.name}
         type={piece.type}
@@ -44,7 +43,6 @@ class EquipContainer extends Component {
   render() {
     let { path } = this.props;
     if (path === '') {
-      console.log(this.props)
       return (
         <main className='equip-container'>
           {this.createWeaponCards()}
@@ -63,11 +61,17 @@ class EquipContainer extends Component {
           {this.createWeaponCards()}
         </main>
       )
+    } else if (path === 'equipment-box') {
+      return (
+        <main className='equip-container'>
+          <EquipmentBox />
+        </main>
+      )
     }
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   armors: state.armors,
   weapons: state.weapons,
   path: state.path

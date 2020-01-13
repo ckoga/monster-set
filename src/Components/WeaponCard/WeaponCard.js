@@ -3,7 +3,7 @@ import './WeaponCard.scss';
 import { connect } from 'react-redux';
 import { addEquip } from '../../actions/index';
 
-const WeaponCard = ({ img, name, type, rarity, attack, addEquip }) => {
+export const WeaponCard = ({ img, name, type, rarity, attack, addEquip }) => {
   let helper = (img, name, type, rarity, attack) => {
     let equipment = {
       img: img,
@@ -12,9 +12,10 @@ const WeaponCard = ({ img, name, type, rarity, attack, addEquip }) => {
       rarity: rarity,
       attack: attack
     }
+    console.log('LOOK HERE')
     addEquip(equipment)
   }
-  
+
   return (
     <div className='weapon-card' onClick={() => helper(img, name, type, rarity, attack) }>
       <img className='equip-img' src={img} alt='Weapon'></img>

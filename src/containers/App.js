@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 import './App.scss';
 import { Route, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getWeapons, getArmors } from '../apiCalls';
 import EquipContainer from '../containers/EquipContainer';
-import { addArmors, addWeapons, addPath } from '../actions/index'
+import { addPath } from '../actions/index'
 import Build from './Build';
 import { fetchArmors } from '../thunks/fetchEquipment';
 import { fetchWeapons } from '../thunks/fetchEquipment';
@@ -19,14 +18,6 @@ export class App extends Component {
   componentDidMount = () => {
     this.props.fetchArmors();
     this.props.fetchWeapons();
-   
-    // getWeapons()
-    //   .then(data => this.props.addWeapons(data))
-    //   .catch(err => console.log(err))
-
-    // getArmors()
-    //   .then(data => this.props.addArmors(data))
-    //   .catch(err => console.log(err))
   }
 
   render () {
@@ -47,6 +38,7 @@ export class App extends Component {
           <Route exact path='/' render={() => <EquipContainer /> } />
           <Route exact path='/weapons' render={() => <EquipContainer /> } />
           <Route exact path='/armor' render={() => <EquipContainer /> } />
+          <Route exact path='/equipment-box' render={() => <EquipContainer /> } />
         </div>
       </div>
     );

@@ -3,6 +3,9 @@ export const addEquipmentReducer = (state = [], action) => {
     case "ADD_EQUIP":
       return [...state, action.equipment]
 
+    case "RESET_EQUIP":
+      return state = [];
+
     default: return state;
   }
 }
