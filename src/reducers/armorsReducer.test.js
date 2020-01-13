@@ -1,4 +1,4 @@
-import { addArmors } from '../reducers/armors';
+import { addArmors } from './armors';
 
 describe('addArmors', () => {
   it('should return the initial state', () => {
