@@ -18,14 +18,6 @@ export class App extends Component {
   componentDidMount = () => {
     this.props.fetchArmors();
     this.props.fetchWeapons();
-   
-    // getWeapons()
-    //   .then(data => this.props.addWeapons(data))
-    //   .catch(err => console.log(err))
-
-    // getArmors()
-    //   .then(data => this.props.addArmors(data))
-    //   .catch(err => console.log(err))
   }
 
   render () {

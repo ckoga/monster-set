@@ -11,5 +11,5 @@ export const rootReducer = combineReducers({
   armors: addArmors,
   path: addPathReducer,
   equipment: addEquipmentReducer,
-  set: addSetReducer
+  allSets: addSetReducer
 })

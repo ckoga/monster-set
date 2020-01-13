@@ -11,16 +11,13 @@ const uuidv4 = require('uuid/v4');
 export class Build extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      pendingSet: []
-    }
   }
   
   buildSet = () => {  
     let { equipment } = this.props
     let set = []
     equipment.map(piece => {
-      if (set.length <= 5 && piece.rank !== undefined) {      
+      if (set.length <= 5 && piece.rank !== undefined) {  
         set = [...set, <ArmorCard
           key={uuidv4()}
           img={piece.img}
@@ -43,12 +40,13 @@ export class Build extends Component {
             return 
           }
         })
-    // this.setState({ pendingSet: set })
     return set
   }
 
   saveSet = () => {
-
+    let { equipment, addSet } = this.props
+    console.log(this.props)
+    addSet(equipment)
   }
 
   render() {  
@@ -70,8 +68,8 @@ export const mapStateToProps = state => ({
   equipment: state.equipment
 });
 
-export const mapsDispatchToProps = dispatch => ({
-  addSet: dispatch( addSet() )
+export const mapDispatchToProps = dispatch => ({
+  addSet: equipment => dispatch( addSet(equipment) )
 })
 
-export default connect(mapStateToProps)(Build);
+export default connect(mapStateToProps, mapDispatchToProps)(Build);

@@ -12,6 +12,7 @@ export const WeaponCard = ({ img, name, type, rarity, attack, addEquip }) => {
       rarity: rarity,
       attack: attack
     }
+    console.log('LOOK HERE')
     addEquip(equipment)
   }
 
