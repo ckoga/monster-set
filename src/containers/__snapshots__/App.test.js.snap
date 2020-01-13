@@ -64,6 +64,11 @@ exports[`App should match the snapshot 1`] = `
       path="/armor"
       render={[Function]}
     />
+    <Route
+      exact={true}
+      path="/equipment-box"
+      render={[Function]}
+    />
   </div>
 </div>
 `;
