@@ -5,6 +5,7 @@ import { ArmorCard } from './ArmorCard';
 
 describe('ArmorCard component', () => {
   let wrapper, armors, mockAddEquip;
+  let addEquipMock = jest.fn()
   beforeEach(() => {
     mockAddEquip = jest.fn()
     armors = [
@@ -41,12 +42,15 @@ describe('ArmorCard component', () => {
       rank={armors[0].rank}
       rarity={armors[0].rarity}
       defense={armors[0].defense}
+      addEquip={addEquipMock}
     />);
   });
 
   it('should invoke helper when the div is clicked', () => {
     wrapper.find('.armor-card').simulate('click');
-    expect(wrapper.instance().helper).toHaveBeenCalled();
+    expect(wrapper.props.addEquip()).toHaveBeenCalled()
+    ;
+    
     //if its getting to addEquip (err: is not a func) is it ok to assume helper is being called?
   })
 })
