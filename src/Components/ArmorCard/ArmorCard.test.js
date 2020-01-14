@@ -6,7 +6,9 @@ import { ArmorCard } from './ArmorCard';
 describe('ArmorCard component', () => {
   let wrapper, armors;
   beforeEach(() => {
-    wrapper = shallow(<ArmorCard />)
+    wrapper = shallow(<ArmorCard 
+    
+    />);
     armors = [
       {
         name: 'Odogaron Helm',
@@ -33,10 +35,9 @@ describe('ArmorCard component', () => {
   });
 
   it('should invoke helper when the div is clicked', () => {
-    const wrapper = shallow(<ArmorCard />)
+   
     wrapper.find('.armor-card').simulate('click');
     expect(wrapper.instance().helper).toHaveBeenCalled();
-    console.log(armor[0])
 
   })
 })

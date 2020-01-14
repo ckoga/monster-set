@@ -3,6 +3,7 @@ import './EquipmentBox.scss'
 import { connect } from 'react-redux'; 
 import ArmorCard from '../ArmorCard/ArmorCard';
 import WeaponCard from '../WeaponCard/WeaponCard';
+import PropTypes from 'prop-types';
 const uuidv4 = require('uuid/v4');
 
 export const EquipmentBox = (allSets) => {
@@ -43,3 +44,7 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(EquipmentBox);
+
+EquipmentBox.propTypes = {
+  allSets: PropTypes.objectOf(array)
+}
