@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import WeaponCard from '../Components/WeaponCard/WeaponCard';
 import ArmorCard from '../Components/ArmorCard/ArmorCard';
 import { addSet, resetEquip } from '../actions/index';
+import PropTypes from 'prop-types';
 const uuidv4 = require('uuid/v4');
 
 
@@ -47,7 +48,6 @@ export class Build extends Component {
     let { equipment, addSet, resetEquip } = this.props
     addSet(equipment)
     resetEquip()
-    console.log(this.props.equipment)
     this.buildSet()
   }
 
@@ -76,3 +76,9 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Build);
+
+Build.propTypes = {
+  equipment: PropTypes.arrayOf(PropTypes.object),
+  addSet: PropTypes.func,
+  resetSet: PropTypes.func
+}

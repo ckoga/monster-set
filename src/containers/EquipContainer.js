@@ -4,7 +4,9 @@ import WeaponCard from '../Components/WeaponCard/WeaponCard';
 import EquipmentBox from '../Components/EquipmentBox/EquipmentBox';
 import { connect } from 'react-redux';
 import './EquipContainer.scss';
+import PropTypes from 'prop-types';
 const uuidv4 = require('uuid/v4');
+
 
 
 export class EquipContainer extends Component {
@@ -79,3 +81,9 @@ export const mapStateToProps = state => ({
 
 
 export default connect(mapStateToProps)(EquipContainer);
+
+EquipContainer.propTypes = {
+  armors: PropTypes.arrayOf(PropTypes.objects),
+  weapons: PropTypes.arrayOf(PropTypes.objects),
+  path: PropTypes.string
+}

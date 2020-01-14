@@ -66,7 +66,7 @@ describe('Build Component', () => {
           rank: 'low',
           rarity: 1
         }
-      ]
+      ];
       const actionToDispatch = addSet(equipment);
       const mappedProps = mapDispatchToProps(mockDispatch);
 
@@ -110,7 +110,8 @@ describe('mapStateToProps', () => {
       equipment: equipment
     };
 
-    mockState = {
+    const mockState = {
+      id: 2,
       equipment: equipment
     };
 

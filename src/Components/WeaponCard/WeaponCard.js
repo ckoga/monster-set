@@ -2,6 +2,7 @@ import React from 'react';
 import './WeaponCard.scss';
 import { connect } from 'react-redux';
 import { addEquip } from '../../actions/index';
+import PropTypes from 'prop-types'
 
 export const WeaponCard = ({ img, name, type, rarity, attack, addEquip }) => {
   let helper = (img, name, type, rarity, attack) => {
@@ -12,7 +13,6 @@ export const WeaponCard = ({ img, name, type, rarity, attack, addEquip }) => {
       rarity: rarity,
       attack: attack
     }
-    console.log('LOOK HERE')
     addEquip(equipment)
   }
 
@@ -34,3 +34,12 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(WeaponCard);
+
+WeaponCard.propTypes = {
+  img: PropTypes.string, 
+  name: PropTypes.string, 
+  type: PropTypes.string, 
+  rarity: PropTypes.number, 
+  attack: PropTypes.object, 
+  addEquip: PropTypes.func
+}
