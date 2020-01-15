@@ -1,7 +1,7 @@
 import React from 'react';
 import { Build, mapStateToProps, mapDispatchToProps } from './Build';
 import { shallow } from 'enzyme';
-import { addSet } from '../actions/action.test';
+import { addSet } from '../actions/index';
 
 describe('Build Component', () => {
   let wrapper, equipment, mockState;
@@ -39,37 +39,13 @@ describe('Build Component', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    it('should should call dispatch with an addSet action when saveSet is called', () => {
-      const mockDispatch = jest.fn();
-      let equipment = [
-        {
-          name: 'Daoras Colossus',
-          type: 'hammer',
-          rarity: 8,
-          attack: 1040
-        },
-        {
-          name: 'Odogaron Helm',
-          type: 'head',
-          rank: 'low',
-          rarity: 4,
-        },
-        {
-          name: 'Leather Headgear',
-          type: 'head',
-          rank: 'low',
-          rarity: 1
-        },
-        {
-          name: 'Leather Gloves',
-          type: 'head',
-          rank: 'low',
-          rarity: 1
-        }
-      ];
-      const actionToDispatch = addSet(equipment);
-      const mappedProps = mapDispatchToProps(mockDispatch);
-
+    let mockDispatch = jest.fn();
+    let mappedProps = mapDispatchToProps(mockDispatch);
+    let equipment = [{ img: 'image', name: 'sword', type: 'tiny sword', rarity: 200, attack: 10000 }, { img: 'image', name: 'sword', type: 'tiny sword', rarity: 200, attack: 10000 }];
+    
+    it('addSet', () => {
+      const actionToDispatch = addSet([{ img: 'image', name: 'sword', type: 'tiny sword', rarity: 200, attack: 10000 }, { img: 'image', name: 'sword', type: 'tiny sword', rarity: 200, attack: 10000 }]);
+      
       mappedProps.addSet(equipment);
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)

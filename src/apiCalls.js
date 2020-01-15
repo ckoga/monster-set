@@ -8,7 +8,7 @@ export const getWeapons = async () => {
     const smallerSet = weapons.slice(0, 900)
     return smallerSet;
   } catch (error) {
-    console.error(error)
+    console.error(error.message)
   }
 };
 
@@ -22,6 +22,6 @@ export const getArmors = async () => {
       const smallerSet = armor.slice(0, 600)
     return smallerSet;
   } catch (error) {
-    console.log(error)
+    console.log(error.message)
   }
 };
